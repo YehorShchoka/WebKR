@@ -1,0 +1,338 @@
+.header {
+  width: var(--header-width);
+  height: var(--header-heigth);
+  position: absolute;
+  background: url(../img/background.svg) no-repeat;
+  background-size: contain;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    display: grid;
+    grid-template-areas:
+      "icon users search go"
+      "mail email add add"
+      "options options options options"
+      "image image image image";
+    grid-template-columns: auto minmax(100px, 150px) 1fr auto;
+    grid-template-rows: auto auto auto auto;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .header_icon {
+    grid-area: icon;
+    position: relative !important;
+    left: 0 !important;
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  .header_users {
+    grid-area: users;
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .header_users_text {
+    font-size: 14px !important;
+    padding-left: 10px !important;
+    padding-right: 8px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .header_search {
+    grid-area: search;
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .header_search_text {
+    font-size: 14px !important;
+    padding-left: 10px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .header_go {
+    grid-area: go;
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 60px !important;
+    min-width: 60px !important;
+  }
+
+  .header_mail {
+    grid-area: mail;
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: auto !important;
+    min-width: 49px;
+  }
+
+  .header_email {
+    grid-area: email;
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+  }
+
+  .header_add {
+    grid-area: add;
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: auto !important;
+    min-width: 81px;
+  }
+
+  .header_options {
+    grid-area: options;
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 5px !important;
+  }
+
+  .header_option {
+    width: 100% !important;
+    min-width: 0 !important;
+    font-size: 14px !important;
+    padding: 5px !important;
+    word-wrap: break-word;
+  }
+
+  .header_image {
+    grid-area: image;
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 292px !important;
+    height: 155px !important;
+    justify-self: center;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    grid-template-areas:
+      "icon"
+      "users"
+      "search"
+      "go"
+      "mail"
+      "email"
+      "add"
+      "options"
+      "image";
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(9, auto);
+  }
+
+  .header_options {
+    grid-template-columns: 1fr !important;
+    gap: 5px;
+  }
+
+  .header_option {
+    width: 100% !important;
+    height: 60px !important;
+  }
+}
+
+.header_icon {
+  width: var(--icon-width);
+  height: var(--icon-heigth);
+  background: url(../img/icon.svg) no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 22px;
+}
+
+.header_users {
+  width: var(--users-width);
+  height: var(--users-heigth);
+  left: 335px;
+  top: 15px;
+  background-color: rgba(var(--color-black-rgb), 0.42);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--stroke-color);
+  cursor: pointer;
+}
+
+.header_users_text {
+  font-weight: var(--buttons-font-weight);
+  color: var(--color-black);
+  padding-left: 17px;
+  padding-right: 12px;
+}
+
+.header_users_triangle {
+  width: var(--triangle-width);
+  height: var(--triangle-heigth);
+  background: url(../img/triangle.svg) no-repeat;
+  background-size: contain;
+  position: relative;
+}
+
+.header_search {
+  width: var(--search-width);
+  height: var(--search-heigth);
+  top: 15px;
+  left: 449px;
+  background-color: rgba(var(--color-black-rgb), 0.36);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--stroke-color);
+  cursor: text;
+}
+
+.header_search_text {
+  font-weight: var(--searchbar-font-weight);
+  font-style: var(--searchbar-font-style);
+  color: var(--color-gray);
+  padding-left: 22px;
+}
+
+.header_go {
+  width: var(--go-width);
+  height: var(--go-heigth);
+  top: 15px;
+  left: 1267px;
+  background-color: rgba(var(--color-black-rgb), 0.42);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--stroke-color);
+  font-weight: var(--buttons-font-weight);
+  color: var(--color-black);
+  cursor: pointer;
+}
+
+.header_go:hover {
+  background-color: rgba(var(--color-black-rgb), 0.62);
+}
+
+.header_mail {
+  width: var(--mail-width);
+  height: var(--mail-heigth);
+  top: 107px;
+  left: 926px;
+  background-color: rgba(var(--color-black-rgb), 0.42);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--stroke-color);
+  cursor: pointer;
+}
+
+.header_mail:hover {
+  background-color: rgba(var(--color-black-rgb), 0.62);
+}
+
+.header_mail_icon {
+  width: var(--mail-icon-width);
+  height: var(--mail-icon-heigth);
+  background: url(../img/mail-icon.svg) no-repeat;
+  background-size: contain;
+  position: relative;
+}
+
+.header_email {
+  width: var(--email-width);
+  height: var(--email-heigth);
+  top: 107px;
+  left: 974px;
+  background-color: rgba(var(--color-black-rgb), 0.36);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--stroke-color);
+  cursor: text;
+}
+
+.header_email_text {
+  font-weight: var(--searchbar-font-weight);
+  font-style: var(--searchbar-font-style);
+  color: var(--color-gray);
+  padding-left: 7px;
+}
+
+.header_add {
+  width: var(--add-width);
+  height: var(--add-heigth);
+  top: 107px;
+  left: 1306px;
+  background-color: var(--main-color);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--stroke-color);
+  font-weight: var(--buttons-font-weight);
+  color: var(--color-black);
+  cursor: pointer;
+}
+
+.header_add:hover {
+  background-color: var(--main-color-hover);
+}
+
+.header_options {
+  width: var(--header-options-width);
+  height: var(--header-options-heigth);
+  top: 246px;
+  left: 22px;
+  grid-template-columns: repeat(5, 1fr);
+  color: var(--color-black);
+  display: grid;
+  position: absolute;
+  gap: 0px;
+}
+
+.header_option {
+  background: var(--header-option-color);
+  border: 1px solid var(--color-black);
+  width: var(--header-options-item-width);
+  height: var(--header-options-item-heigth);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.header_option:hover {
+  background: var(--header-option-color-hover);
+}
+
+.header_image {
+  width: var(--header-image-width);
+  height: var(--header-image-heigth);
+  background: url(../img/img-header.svg) no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 1056px;
+  top: 177px;
+}
